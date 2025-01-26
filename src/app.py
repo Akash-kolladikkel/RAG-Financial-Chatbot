@@ -1,3 +1,7 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import os
 import streamlit as st
 import chromadb
@@ -16,10 +20,6 @@ from dotenv import load_dotenv
 load_dotenv()
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 LLAMA_CLOUD_API_KEY = os.getenv('LLAMA_CLOUD_API_KEY')
-
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # Function to parse and process PDF
 def process_pdf(file):

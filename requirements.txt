@@ -1,7 +1,6 @@
 streamlit
 langchain
-chromadb
-sqlite3==3.35.0
+chromadb==0.3.10
 uuid
 langchain-groq
 langchain-experimental

@@ -1,6 +1,7 @@
 streamlit
 langchain
 chromadb
+sqlite3
 uuid
 langchain-groq
 langchain-experimental

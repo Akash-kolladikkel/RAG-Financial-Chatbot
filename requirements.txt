@@ -4,6 +4,7 @@ chromadb
 uuid
 langchain-groq
 langchain-experimental
+langchain-chroma
 langchain-core
 langchain-huggingface
 llama-parse

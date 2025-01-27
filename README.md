@@ -44,3 +44,27 @@ The financial document assistant is deployed and accessible on Streamlit Cloud. 
 [**Financial Document Assistant - Web App**](https://rag-financial-chatbot-ak.streamlit.app/)  
 
 ---
+## 🐳 Run Locally Using Docker  
+
+You can also run the financial chatbot locally using Docker. Follow these steps:
+
+### Prerequisites  
+1. **Docker** installed on your machine.  
+2. **API Keys** for Groq and Llama Cloud.  
+
+### Steps to Run  
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/Akash-kolladikkel/RAG-Financial-Chatbot.git
+   cd RAG-Financial-Chatbot 
+2. Rename .env.example to .env and add your API keys:
+   - GROQ_API_KEY=your_groq_api_key_here
+   - LLAMA_CLOUD_API_KEY=your_llama_cloud_api_key_here
+3. Build the Docker image:
+   ```bash
+   docker build -t financial-chatbot .
+4. Run the Docker container:
+   ```bash
+    docker run -p 8501:8501 --env-file .env financial-chatbot
+5. Open your browser and navigate to http://localhost:8501.
+   

@@ -8,7 +8,7 @@ import chromadb
 from uuid import uuid4
 from langchain_chroma import Chroma
 from langchain_groq import ChatGroq
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_experimental.text_splitter import SemanticChunker
 from langchain.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
@@ -34,7 +34,7 @@ def process_pdf(file):
 # Function to split text and store embeddings
 def store_embeddings(text):
     embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    splitter = RecursiveCharacterTextSplitter(chunk_size=3000,chunk_overlap=500,separators=["\n\n", "\n", " ", ""])
+    splitter = SemanticChunker(embeddings)
 
     chunks, ids = [], []
     for chunk in splitter.split_text(text):
@@ -55,7 +55,7 @@ def create_chain(client, embeddings):
     vectorstore = Chroma(client=client, collection_name="Financial_DB", embedding_function=embeddings)
     retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
     
-    llm = ChatGroq(temperature=0.5, model_name="llama-3.1-8b-instant", groq_api_key=GROQ_API_KEY)
+    llm = ChatGroq(temperature=0.5, model_name="llama-guard-3-8b", groq_api_key=GROQ_API_KEY)
     prompt_template = """
     You are a financial analyst assistant trained to answer questions based on Profit & Loss (P&L) tables and financial statements. Follow these instructions carefully:
 

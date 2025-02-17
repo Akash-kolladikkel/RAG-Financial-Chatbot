@@ -55,7 +55,7 @@ def create_chain(client, embeddings):
     vectorstore = Chroma(client=client, collection_name="Financial_DB", embedding_function=embeddings)
     retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
     
-    llm = ChatGroq(temperature=0.5, model_name="llama-3.1-8b-instant", groq_api_key=GROQ_API_KEY)
+    llm = ChatGroq(temperature=0.5, model_name="llama-3.3-70b-versatile", groq_api_key=GROQ_API_KEY)
     prompt_template = """
     You are a financial analyst assistant trained to answer questions based on Profit & Loss (P&L) tables and financial statements. Follow these instructions carefully:
 

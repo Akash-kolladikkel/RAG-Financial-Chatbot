@@ -8,7 +8,7 @@ import chromadb
 from uuid import uuid4
 from langchain_chroma import Chroma
 from langchain_groq import ChatGroq
-from langchain_experimental.text_splitter import SemanticChunker
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser

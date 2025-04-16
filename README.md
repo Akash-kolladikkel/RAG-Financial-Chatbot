@@ -18,7 +18,8 @@ A financial document assistant that uses Retrieval-Augmented Generation (RAG) to
 
 The financial document assistant is deployed and accessible on Streamlit Cloud. You can access the web app here:  
 
-[**Financial Document Assistant - Web App**](https://rag-financial-chatbot-ak.streamlit.app/)  
+[**Financial Document Assistant - Web App**](https://rag-financial-chatbot-ak.streamlit.app/)
+![ss](https://github.com/Akash-kolladikkel/RAG-Financial-Chatbot/blob/d8ea1671f2ae1ccdd20552a0881f25d328513c83/rag2.png)
 
 ---
 
